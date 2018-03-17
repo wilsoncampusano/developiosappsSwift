@@ -22,7 +22,13 @@ class FoodTrackerUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testClickAfterEnterMeal() {
+		
+		let app = XCUIApplication()
+		let enterMealNameTextField = app.textFields["Enter meal name"]
+		enterMealNameTextField.tap()
+		enterMealNameTextField.typeText("wilson")
+		app.buttons["Set Default Label Text"].tap()
 		
     }
     
