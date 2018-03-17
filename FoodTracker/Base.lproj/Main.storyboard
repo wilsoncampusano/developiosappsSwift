@@ -43,9 +43,13 @@
                                     </button>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="iIi-Vl-xts">
                                         <rect key="frame" x="0.0" y="80.5" width="318" height="320"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="iIi-Vl-xts" secondAttribute="height" multiplier="159:160" id="qk2-UI-k29"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="5IG-mn-dH9" appends="YES" id="aDS-Dx-XV4"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                             </stackView>
@@ -61,9 +65,15 @@
                     <connections>
                         <outlet property="mealNameLabel" destination="3u0-V1-9F5" id="GVu-qf-5H8"/>
                         <outlet property="nameTextField" destination="Z7e-sv-Qeu" id="ug0-LC-L8Q"/>
+                        <outlet property="photoImageView" destination="iIi-Vl-xts" id="b4K-jn-F5z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="5IG-mn-dH9">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="fxJ-OO-SHa"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="135" y="132.04225352112675"/>
         </scene>

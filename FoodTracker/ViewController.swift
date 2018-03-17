@@ -8,15 +8,26 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate,
+					  UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
 	//MARK: UI properties
 	@IBOutlet weak var nameTextField: UITextField!
 	@IBOutlet weak var mealNameLabel: UILabel!
+	@IBOutlet weak var photoImageView: UIImageView!
 	
 	
 	//MARK: Actions
 	@IBAction func setDefaultLabelText(_ sender: UIButton) {
+	}
+	
+	@IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
+		// resign text field
+		nameTextField.resignFirstResponder()
+		let imagePickerController  = UIImagePickerController()
+		imagePickerController.sourceType = .photoLibrary
+		imagePickerController.delegate = self
+		present(imagePickerController, animated: true, completion: myHandler)
 	}
 	
 	override func viewDidLoad() {
@@ -36,5 +47,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
 		nameTextField.resignFirstResponder()
 		return true
 	}
+	
+	func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+		dismiss(animated: true, completion: myHandler)
+	}
+	
+	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+		guard let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+			fatalError("expected a dictionary containing an image, but was \(info)")
+		}
+		
+		photoImageView.image = selectedImage
+		dismiss(animated: true, completion: myHandler)
+	}
 
+	
+	
+	let myHandler = {() -> Void in print("Hola Wilson") }
 }
