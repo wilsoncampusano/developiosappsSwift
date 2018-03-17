@@ -17,7 +17,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
 	
 	//MARK: Actions
 	@IBAction func setDefaultLabelText(_ sender: UIButton) {
-		mealNameLabel.text = nameTextField.text
 	}
 	
 	override func viewDidLoad() {
@@ -28,10 +27,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
 	
 	//MARK: Delegates
 	func textFieldDidEndEditing(_ textField: UITextField) {
-		
+		//this is called after the textfield resign control.
+		mealNameLabel.text = nameTextField.text
 	}
 	
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		// this hide de keyboard and resign route event control.
 		nameTextField.resignFirstResponder()
 		return true
 	}
