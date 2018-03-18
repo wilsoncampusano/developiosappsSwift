@@ -19,8 +19,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SiF-Ck-lFM">
-                                <rect key="frame" x="1" y="30" width="318" height="400.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SiF-Ck-lFM">
+                                <rect key="frame" x="1" y="30" width="318" height="510.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3u0-V1-9F5">
                                         <rect key="frame" x="0.0" y="0.0" width="318" height="20.5"/>
@@ -51,6 +51,9 @@
                                             <outletCollection property="gestureRecognizers" destination="5IG-mn-dH9" appends="YES" id="aDS-Dx-XV4"/>
                                         </connections>
                                     </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DoI-T6-anS" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="400.5" width="318" height="110"/>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
