@@ -9,6 +9,11 @@
 import UIKit
 
 class RatingControl: UIStackView {
+	
+	//MARK: properties
+	
+	private var buttons = [UIButton]()
+	var rating = 0
 
 	
 	//MARK: initialization
@@ -23,14 +28,29 @@ class RatingControl: UIStackView {
 		setupButtons()
 	}
 	
+	//MARK: actions
+	
+	@objc func ratingButtonTapped(button: UIButton){
+		print("button pressed 👍")
+	}
+	
 	//MARK: private methods
 	
 	private func setupButtons(){
-		let button = UIButton()
-		button.backgroundColor = .red
-		button.translatesAutoresizingMaskIntoConstraints = false
-		button.heightAnchor.constraint(equalToConstant: 44.0).isActive = true
-		button.widthAnchor.constraint(equalToConstant: 44.0).isActive = true
-		addArrangedSubview(button)
+		
+		for _ in 0..<5{
+			
+			let button = UIButton()
+			button.backgroundColor = .red
+			button.translatesAutoresizingMaskIntoConstraints = false
+			button.heightAnchor.constraint(equalToConstant: 44.0).isActive = true
+			button.widthAnchor.constraint(equalToConstant: 44.0).isActive = true
+			
+			button.addTarget(self, action: #selector(RatingControl.ratingButtonTapped(button:)), for: .touchUpInside)
+			
+			addArrangedSubview(button)
+		}
+		
+	
 	}
 }
