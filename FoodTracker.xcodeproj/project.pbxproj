@@ -13,6 +13,7 @@
 		652FAB81205C150F009AB880 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 652FAB80205C150F009AB880 /* Assets.xcassets */; };
 		652FAB84205C150F009AB880 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 652FAB82205C150F009AB880 /* LaunchScreen.storyboard */; };
 		652FAB8F205C150F009AB880 /* FoodTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652FAB8E205C150F009AB880 /* FoodTrackerTests.swift */; };
+		65437CFA205E719C00E4D2B1 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 65437CF9205E719C00E4D2B1 /* Podfile */; };
 		65EFABB3205D3C77007783CE /* FoodTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EFABB2205D3C77007783CE /* FoodTrackerUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,7 @@
 		652FAB8A205C150F009AB880 /* FoodTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		652FAB8E205C150F009AB880 /* FoodTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTrackerTests.swift; sourceTree = "<group>"; };
 		652FAB90205C150F009AB880 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65437CF9205E719C00E4D2B1 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		65EFABB0205D3C77007783CE /* FoodTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65EFABB2205D3C77007783CE /* FoodTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTrackerUITests.swift; sourceTree = "<group>"; };
 		65EFABB4205D3C77007783CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 		652FAB6D205C150F009AB880 = {
 			isa = PBXGroup;
 			children = (
+				65437CF9205E719C00E4D2B1 /* Podfile */,
 				652FAB78205C150F009AB880 /* FoodTracker */,
 				652FAB8D205C150F009AB880 /* FoodTrackerTests */,
 				65EFABB1205D3C77007783CE /* FoodTrackerUITests */,
@@ -132,9 +135,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 652FAB93205C150F009AB880 /* Build configuration list for PBXNativeTarget "FoodTracker" */;
 			buildPhases = (
+				AF71D75105589965EA9EC486 /* [CP] Check Pods Manifest.lock */,
 				652FAB72205C150F009AB880 /* Sources */,
 				652FAB73205C150F009AB880 /* Frameworks */,
 				652FAB74205C150F009AB880 /* Resources */,
+				149F19BAC41478F54CA94999 /* [CP] Embed Pods Frameworks */,
+				FCE2F04CC628423344EAC855 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +155,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 652FAB96205C150F009AB880 /* Build configuration list for PBXNativeTarget "FoodTrackerTests" */;
 			buildPhases = (
+				29A34396966DAAEE9768470F /* [CP] Check Pods Manifest.lock */,
 				652FAB86205C150F009AB880 /* Sources */,
 				652FAB87205C150F009AB880 /* Frameworks */,
 				652FAB88205C150F009AB880 /* Resources */,
+				3EE827FEB61CE60AEA6D71D2 /* [CP] Embed Pods Frameworks */,
+				71FEB2B33BA712B67E3BB7E7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +176,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 65EFABB9205D3C77007783CE /* Build configuration list for PBXNativeTarget "FoodTrackerUITests" */;
 			buildPhases = (
+				C2C3F11C809B85DE3C78F86C /* [CP] Check Pods Manifest.lock */,
 				65EFABAC205D3C77007783CE /* Sources */,
 				65EFABAD205D3C77007783CE /* Frameworks */,
 				65EFABAE205D3C77007783CE /* Resources */,
+				B6459D9A37BD0F04B58CDDFB /* [CP] Embed Pods Frameworks */,
+				EB2585843FB5F471FB9BDCE5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -234,6 +246,7 @@
 			files = (
 				652FAB84205C150F009AB880 /* LaunchScreen.storyboard in Resources */,
 				652FAB81205C150F009AB880 /* Assets.xcassets in Resources */,
+				65437CFA205E719C00E4D2B1 /* Podfile in Resources */,
 				652FAB7F205C150F009AB880 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,6 +266,153 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		149F19BAC41478F54CA94999 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FoodTracker/Pods-FoodTracker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		29A34396966DAAEE9768470F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FoodTrackerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3EE827FEB61CE60AEA6D71D2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FoodTrackerTests/Pods-FoodTrackerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		71FEB2B33BA712B67E3BB7E7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FoodTrackerTests/Pods-FoodTrackerTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF71D75105589965EA9EC486 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FoodTracker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6459D9A37BD0F04B58CDDFB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FoodTrackerUITests/Pods-FoodTrackerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2C3F11C809B85DE3C78F86C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FoodTrackerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB2585843FB5F471FB9BDCE5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FoodTrackerUITests/Pods-FoodTrackerUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FCE2F04CC628423344EAC855 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FoodTracker/Pods-FoodTracker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		652FAB72205C150F009AB880 /* Sources */ = {
