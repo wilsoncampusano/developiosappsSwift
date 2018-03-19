@@ -27,6 +27,9 @@ class FoodTrackerTests: XCTestCase {
 		
 		let emptyRatingMeal = Meal(name: "", photo: nil, rating: 4)
 		XCTAssertNil(emptyRatingMeal)
+		
+		
+		let largeRatingMEal = Meal(name: "Large", photo: nil, rating: 9)
+		XCTAssertNil(largeRatingMEal)
 	}
-    
 }

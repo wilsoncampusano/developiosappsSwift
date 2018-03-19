@@ -147,11 +147,11 @@
 				652FAB79205C150F009AB880 /* AppDelegate.swift */,
 				652FAB7B205C150F009AB880 /* ViewController.swift */,
 				65BFEA74205EE30E007CFF94 /* RatingControl.swift */,
+				655B89B520603A030097F0AC /* Meal.swift */,
 				652FAB7D205C150F009AB880 /* Main.storyboard */,
 				652FAB80205C150F009AB880 /* Assets.xcassets */,
 				652FAB82205C150F009AB880 /* LaunchScreen.storyboard */,
 				652FAB85205C150F009AB880 /* Info.plist */,
-				655B89B520603A030097F0AC /* Meal.swift */,
 			);
 			path = FoodTracker;
 			sourceTree = "<group>";

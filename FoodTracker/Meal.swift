@@ -13,7 +13,7 @@ class Meal{
 	var rating: Int
 	
 	init?(name: String, photo: UIImage?, rating: Int){
-		guard !name.isEmpty,  !(rating < 0) else {
+		guard !name.isEmpty,  !(rating < 0), (rating >= 0 && rating <= 5) else {
 			return nil
 		}
 		self.name = name
