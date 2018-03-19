@@ -13,7 +13,11 @@ import UIKit
 	//MARK: properties
 	
 	private var buttons = [UIButton]()
-	var rating = 0
+	var rating = 0 {
+		didSet{
+			updateButtonSelectionStates()
+		}
+	}
 	@IBInspectable var starSize: CGSize = CGSize(width: 44.0, height: 44.0){
 		didSet{
 			setupButtons()
@@ -41,7 +45,17 @@ import UIKit
 	//MARK: actions
 	
 	@objc func ratingButtonTapped(button: UIButton){
-		print("button pressed 👍")
+		guard let index = buttons.index(of: button) else {
+			fatalError("the button \(button) is not in the buttons list \(buttons)")
+		}
+		
+		let selectedRating = index + 1
+		
+		if selectedRating == rating{
+			rating = 0
+		}else {
+			rating = selectedRating
+		}
 	}
 	
 	//MARK: private methods
@@ -66,6 +80,7 @@ import UIKit
 			buttons.append(button)
 			addArrangedSubview(button)
 		}
+		updateButtonSelectionStates()
 	}
 	
 	private func loadButtonImages() -> (filled: UIImage,empty: UIImage, highligh: UIImage){
@@ -79,5 +94,11 @@ import UIKit
 			b.removeFromSuperview()
 		}
 		buttons.removeAll()
+	}
+	
+	private func updateButtonSelectionStates(){
+		for(index, button) in buttons.enumerated(){
+			button.isSelected = index <  rating
+		}
 	}
 }
