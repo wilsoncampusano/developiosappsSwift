@@ -64,7 +64,7 @@ import UIKit
 		removeButtons()
 		let images = loadButtonImages()
 		
-		for _ in 0..<starCount{
+		for index in 0..<starCount{
 			
 			let button = UIButton()
 			//button.backgroundColor = .red
@@ -75,6 +75,7 @@ import UIKit
 			button.setImage(images.filled, for: .selected)
 			button.setImage(images.highligh, for: [.highlighted, .selected])
 			button.addTarget(self, action: #selector(RatingControl.ratingButtonTapped(button:)), for: .touchUpInside)
+			button.accessibilityLabel = "Set index \(index + 1) star rating"
 			
 			// this is not necesary because buttons were removed on initializers
 			buttons.append(button)
@@ -99,6 +100,25 @@ import UIKit
 	private func updateButtonSelectionStates(){
 		for(index, button) in buttons.enumerated(){
 			button.isSelected = index <  rating
+			let hintString: String?
+			
+			if rating == index + 1 {
+				hintString = "Tap to reset the rating to zero. "
+			} else {
+				hintString = nil
+			}
+			
+			let valueString: String
+			switch (rating){
+				case 0:
+					valueString = "No rating set."
+				case 1:
+					valueString = "1 star set."
+				default:
+					valueString = "\(rating) stars set"
+			}
+			button.accessibilityHint = hintString
+			button.accessibilityValue = valueString
 		}
 	}
 }
