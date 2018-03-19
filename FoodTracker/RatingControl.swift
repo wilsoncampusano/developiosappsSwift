@@ -14,20 +14,28 @@ import UIKit
 	
 	private var buttons = [UIButton]()
 	var rating = 0
-	@IBInspectable var starSize = CGSize(width: 44.0, height: 44.0)
-	@IBInspectable var starCount = 5
+	@IBInspectable var starSize: CGSize = CGSize(width: 44.0, height: 44.0){
+		didSet{
+			setupButtons()
+		}
+	}
+	@IBInspectable var starCount: Int = 5 {
+		didSet{
+			setupButtons()
+		}
+	}
 
 	
 	//MARK: initialization
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
-		setupButtons()
+		//setupButtons()
 	}
 	
 	required init(coder: NSCoder) {
 		super.init(coder: coder)
-		setupButtons()
+		//setupButtons()
 	}
 	
 	//MARK: actions
@@ -39,7 +47,7 @@ import UIKit
 	//MARK: private methods
 	
 	private func setupButtons(){
-		
+		removeButtons()
 		for _ in 0..<starCount{
 			
 			let button = UIButton()
@@ -50,9 +58,16 @@ import UIKit
 			
 			button.addTarget(self, action: #selector(RatingControl.ratingButtonTapped(button:)), for: .touchUpInside)
 			
+			// this is not necesary because buttons were removed on initializers
+			buttons.append(button)
 			addArrangedSubview(button)
 		}
-		
+	}
 	
+	private func removeButtons(){
+		for b in buttons{
+			removeArrangedSubview(b)
+		}
+		buttons.removeAll()
 	}
 }
