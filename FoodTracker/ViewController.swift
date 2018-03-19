@@ -15,12 +15,11 @@ class ViewController: UIViewController, UITextFieldDelegate,
 	@IBOutlet weak var nameTextField: UITextField!
 	@IBOutlet weak var mealNameLabel: UILabel!
 	@IBOutlet weak var photoImageView: UIImageView!
+	@IBOutlet weak var ratingControl: RatingControl!
 	
 	
 	//MARK: Actions
-	@IBAction func setDefaultLabelText(_ sender: UIButton) {
-	}
-	
+
 	@IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
 		// resign text field
 		nameTextField.resignFirstResponder()
