@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Meal View Controller-->
+        <!--New Meal-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MealViewController" customModule="FoodTracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -60,6 +60,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="New Meal" id="MRF-i5-kbL">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="wO4-Ya-e32"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="pgY-0j-V87"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="nameTextField" destination="Z7e-sv-Qeu" id="ug0-LC-L8Q"/>
                         <outlet property="photoImageView" destination="iIi-Vl-xts" id="b4K-jn-F5z"/>
@@ -73,9 +77,9 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="532.5" y="132.04225352112675"/>
+            <point key="canvasLocation" x="930" y="132.04225352112675"/>
         </scene>
-        <!--Meal Table View Controller-->
+        <!--Your Meals-->
         <scene sceneID="6Co-qM-XiM">
             <objects>
                 <tableViewController id="1Rn-Z3-Vc3" customClass="MealTableViewController" customModule="FoodTracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -125,7 +129,13 @@
                             <outlet property="delegate" destination="1Rn-Z3-Vc3" id="UZq-WC-gl7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Bju-Ro-CIC"/>
+                    <navigationItem key="navigationItem" title="Your Meals" id="Bju-Ro-CIC">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="2vk-Gr-MeH">
+                            <connections>
+                                <segue destination="oIB-ws-cbn" kind="presentation" identifier="AddItem" id="bgI-oc-MUB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NJd-OP-m5P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -148,6 +158,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3KQ-bP-n0x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1378" y="131"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="c9Q-wq-D6u">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oIB-ws-cbn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vCZ-2d-BfR">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="REu-XD-RLo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JhY-SN-NdA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="259" y="132"/>
         </scene>
     </scenes>
     <resources>
