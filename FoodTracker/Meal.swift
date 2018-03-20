@@ -7,7 +7,7 @@
 //
 import UIKit
 
-class Meal{
+public class Meal {
 	var name:String
 	var photo: UIImage?
 	var rating: Int
