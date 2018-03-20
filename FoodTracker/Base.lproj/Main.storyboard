@@ -62,22 +62,29 @@
                     </view>
                     <navigationItem key="navigationItem" title="New Meal" id="MRF-i5-kbL">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="wO4-Ya-e32"/>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="pgY-0j-V87"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="pgY-0j-V87">
+                            <connections>
+                                <action selector="saveButton:" destination="BYZ-38-t0r" id="8vL-oG-1uF"/>
+                                <segue destination="Svg-Vq-q7O" kind="unwind" unwindAction="unwindToMealListWithSender:" id="x1M-me-F1q"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="nameTextField" destination="Z7e-sv-Qeu" id="ug0-LC-L8Q"/>
                         <outlet property="photoImageView" destination="iIi-Vl-xts" id="b4K-jn-F5z"/>
                         <outlet property="ratingControl" destination="DoI-T6-anS" id="BY5-fk-Rc0"/>
+                        <outlet property="saveButton" destination="pgY-0j-V87" id="nMJ-9z-oz6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="Svg-Vq-q7O" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="5IG-mn-dH9">
                     <connections>
                         <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="fxJ-OO-SHa"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="930" y="132.04225352112675"/>
+            <point key="canvasLocation" x="1101" y="131"/>
         </scene>
         <!--Your Meals-->
         <scene sceneID="6Co-qM-XiM">

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 class MealViewController: UIViewController, UITextFieldDelegate,
 					  UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -15,7 +16,28 @@ class MealViewController: UIViewController, UITextFieldDelegate,
 	@IBOutlet weak var nameTextField: UITextField!
 	@IBOutlet weak var photoImageView: UIImageView!
 	@IBOutlet weak var ratingControl: RatingControl!
+	@IBOutlet weak var saveButton: UIBarButtonItem!
 	
+	var meal: Meal?
+	
+	
+	//MARK: Navigation
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		super.prepare(for: segue, sender: sender)
+		
+		guard let button = sender as? UIBarButtonItem, button === saveButton else {
+			os_log("the save button was not pressed, cancelling", log: OSLog.default, type: .debug)
+			return
+		}
+		
+		let name = nameTextField.text ?? ""
+		let rating = ratingControl.rating
+		let photo = photoImageView.image
+		
+		meal = Meal(name: name, photo: photo, rating: rating)
+		
+	}
 	
 	//MARK: Actions
 
@@ -27,6 +49,7 @@ class MealViewController: UIViewController, UITextFieldDelegate,
 		imagePickerController.delegate = self
 		present(imagePickerController, animated: true, completion: myHandler)
 	}
+	
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
