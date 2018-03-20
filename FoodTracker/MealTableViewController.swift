@@ -16,7 +16,6 @@ class MealTableViewController: UITableViewController {
 		loadSampleMeals()
     }
 	
-	
 	//MARK: table view configuration
 	override func numberOfSections(in tableView: UITableView) -> Int {
 		return 1
@@ -43,8 +42,7 @@ class MealTableViewController: UITableViewController {
 		return meals.count
 	}
 
-		//MARK: methods
-		
+	//MARK: methods
 	func loadSampleMeals(){
 		guard let m1 = Meal(name: "Meal 1 ", photo: #imageLiteral(resourceName: "meal1"), rating: 3),
 				let m2 =  Meal(name: "Meal 2 ", photo: #imageLiteral(resourceName: "meal2"), rating: 5),

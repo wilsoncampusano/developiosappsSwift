@@ -20,22 +20,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SiF-Ck-lFM">
-                                <rect key="frame" x="1" y="30" width="319" height="421"/>
+                                <rect key="frame" x="1" y="30" width="319" height="400.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3u0-V1-9F5">
-                                        <rect key="frame" x="0.0" y="0.0" width="319" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter meal name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z7e-sv-Qeu">
-                                        <rect key="frame" x="0.0" y="20.5" width="319" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="319" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="iIi-Vl-xts">
-                                        <rect key="frame" x="0.0" y="50.5" width="319" height="320.5"/>
+                                        <rect key="frame" x="0.0" y="30" width="319" height="320.5"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="iIi-Vl-xts" secondAttribute="height" multiplier="159:160" id="qk2-UI-k29"/>
@@ -45,7 +39,7 @@
                                         </connections>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="DoI-T6-anS" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="371" width="319" height="50"/>
+                                        <rect key="frame" x="0.0" y="350.5" width="319" height="50"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="size" keyPath="starSize">
                                                 <size key="value" width="44" height="44"/>
@@ -67,7 +61,6 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="mealNameLabel" destination="3u0-V1-9F5" id="GVu-qf-5H8"/>
                         <outlet property="nameTextField" destination="Z7e-sv-Qeu" id="ug0-LC-L8Q"/>
                         <outlet property="photoImageView" destination="iIi-Vl-xts" id="b4K-jn-F5z"/>
                         <outlet property="ratingControl" destination="DoI-T6-anS" id="BY5-fk-Rc0"/>
