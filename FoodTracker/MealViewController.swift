@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MealViewController.swift
 //  FoodTracker
 //
 //  Created by Wilson Campusano on 3/16/18.
@@ -8,12 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate,
+class MealViewController: UIViewController, UITextFieldDelegate,
 					  UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
 	//MARK: UI properties
 	@IBOutlet weak var nameTextField: UITextField!
-	@IBOutlet weak var mealNameLabel: UILabel!
 	@IBOutlet weak var photoImageView: UIImageView!
 	@IBOutlet weak var ratingControl: RatingControl!
 	
@@ -37,8 +36,7 @@ class ViewController: UIViewController, UITextFieldDelegate,
 	
 	//MARK: Delegates
 	func textFieldDidEndEditing(_ textField: UITextField) {
-		//this is called after the textfield resign control.
-		mealNameLabel.text = nameTextField.text
+	
 	}
 	
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
