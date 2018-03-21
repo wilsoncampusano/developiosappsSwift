@@ -50,7 +50,16 @@ class MealViewController: UIViewController, UITextFieldDelegate,
 	//MARK: Actions
 
 	@IBAction func cancel(_ sender: UIBarButtonItem) {
-		dismiss(animated: false, completion: nil)
+		let isPresentingInAddMealMode = presentingViewController is UINavigationController
+		
+		
+		if isPresentingInAddMealMode {
+			dismiss(animated: false, completion: nil)
+		} else if let owningNavigationController  = navigationController {
+			owningNavigationController.popViewController(animated: true)
+		}else {
+			fatalError("error cancel button")
+		}
 	}
 	
 	@IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
