@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 class MealTableViewController: UITableViewController {
 	private var meals = [Meal]()
@@ -66,5 +67,26 @@ class MealTableViewController: UITableViewController {
 		}
 		
 		meals += [m1, m2, m3]
+	}
+	
+	//MARK: SEGUE
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		super.prepare(for: segue, sender: sender)
+		
+		switch segue.identifier ?? "" {
+			case "AddItem":
+				os_log("ADDING ITEM", log: OSLog.default, type: .debug)
+			case "ShowDetail":
+				guard let controller =  segue.destination as? MealViewController,
+					  let cell = sender as? MealTableViewCell,
+					  let indexPath = tableView.indexPath(for: cell)
+				else{
+					fatalError("error obtening index")
+				}
+				let meal = meals[indexPath.row]
+				controller.meal = meal
+			default:
+				fatalError("ERROR EN SEGUE")
+			}
 	}
 }

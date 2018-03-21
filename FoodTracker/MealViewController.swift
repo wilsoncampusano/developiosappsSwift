@@ -62,13 +62,18 @@ class MealViewController: UIViewController, UITextFieldDelegate,
 		present(imagePickerController, animated: true, completion: myHandler)
 	}
 	
-	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		nameTextField.delegate = self
+		
+		if let meal = meal {
+			navigationItem.title =  meal.name
+			nameTextField.text = meal.name
+			photoImageView.image = meal.photo
+			ratingControl.rating = meal.rating
+		}
 		updateSaveButton()
 	}
-	
 	
 	//MARK: Delegates
 	func textFieldDidEndEditing(_ textField: UITextField) {
@@ -95,7 +100,5 @@ class MealViewController: UIViewController, UITextFieldDelegate,
 		dismiss(animated: true, completion: myHandler)
 	}
 
-	
-	
 	let myHandler = {() -> Void in print("Hola Wilson") }
 }
