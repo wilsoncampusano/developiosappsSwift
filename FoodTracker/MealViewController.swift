@@ -21,6 +21,14 @@ class MealViewController: UIViewController, UITextFieldDelegate,
 	var meal: Meal?
 	
 	
+	//MARK: Methods
+	
+	func updateSaveButton(){
+		let text = nameTextField.text ?? ""
+		saveButton.isEnabled = !text.isEmpty
+	}
+	
+	
 	//MARK: Navigation
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -41,6 +49,10 @@ class MealViewController: UIViewController, UITextFieldDelegate,
 	
 	//MARK: Actions
 
+	@IBAction func cancel(_ sender: UIBarButtonItem) {
+		dismiss(animated: false, completion: nil)
+	}
+	
 	@IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
 		// resign text field
 		nameTextField.resignFirstResponder()
@@ -54,12 +66,14 @@ class MealViewController: UIViewController, UITextFieldDelegate,
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		nameTextField.delegate = self
+		updateSaveButton()
 	}
 	
 	
 	//MARK: Delegates
 	func textFieldDidEndEditing(_ textField: UITextField) {
-	
+		updateSaveButton()
+		navigationItem.title = textField.text
 	}
 	
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
