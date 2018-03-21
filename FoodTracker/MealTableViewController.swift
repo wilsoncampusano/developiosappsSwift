@@ -49,11 +49,16 @@ class MealTableViewController: UITableViewController {
 		
 		if let sourceViewController = sender.source as? MealViewController,
 			let meal = sourceViewController.meal {
-			let newIndexPath = IndexPath(row: meals.count, section: 0)
 			
-			meals.append(meal)
-			
-			tableView.insertRows(at: [newIndexPath], with: .automatic)
+			if let indexSelected =  tableView.indexPathForSelectedRow{
+				meals[indexSelected.row] = meal
+				
+				tableView.reloadRows(at: [indexSelected], with: .none)
+			}else{
+				let newIndexPath = IndexPath(row: meals.count, section: 0)
+				meals.append(meal)
+				tableView.insertRows(at: [newIndexPath], with: .automatic)
+			}
 		}
 		
 	}
