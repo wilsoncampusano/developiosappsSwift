@@ -15,7 +15,12 @@ class MealTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		navigationItem.leftBarButtonItem = editButtonItem
-		loadSampleMeals()
+		
+		if let savedMeals = loadMeals(){
+			meals +=  savedMeals
+		}else {
+			loadSampleMeals()
+		}
     }
 	
 	//MARK: table view configuration
@@ -45,6 +50,7 @@ class MealTableViewController: UITableViewController {
 			
 			meals.remove(at: indexPath.row)
 			tableView.deleteRows(at: [indexPath], with: .fade)
+			saveMeals()
 			
 		}else if editingStyle == .insert{
 			
@@ -74,6 +80,7 @@ class MealTableViewController: UITableViewController {
 				let newIndexPath = IndexPath(row: meals.count, section: 0)
 				meals.append(meal)
 				tableView.insertRows(at: [newIndexPath], with: .automatic)
+				saveMeals()
 			}
 		}
 		
@@ -88,6 +95,19 @@ class MealTableViewController: UITableViewController {
 		}
 		
 		meals += [m1, m2, m3]
+	}
+	
+	private func saveMeals(){
+		let itWasSaved = NSKeyedArchiver.archiveRootObject(meals, toFile: Meal.ArchiveURL.path)
+		if itWasSaved {
+			os_log("guardado", log: OSLog.default, type: .debug)
+		}else {
+			os_log("fallo guardado", log: OSLog.default, type: .error)
+		}
+	}
+	
+	private func loadMeals() -> [Meal]? {
+		return NSKeyedUnarchiver.unarchiveObject(withFile: Meal.ArchiveURL.path) as? [Meal]
 	}
 	
 	//MARK: SEGUE
